@@ -1,5 +1,5 @@
 # Function of This Program
-The purpose of this program is to take in external data through I2S protocol and filter it.
+The purpose of this program is to take in external data through the I2S protocol. Later, that data is sent to an FIR filter. Finally, the filtered data is sent back out through the same I2S protocol.
 
 ### This is done accordingly:
 ![image](https://github.com/user-attachments/assets/67ba868f-7f1e-4362-a067-ea02bd34c124)
