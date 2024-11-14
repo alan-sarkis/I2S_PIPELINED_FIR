@@ -14,7 +14,7 @@ This project implements the I2S protocol to receive audio input, processes it th
 
 ## Features
 - Supports stereo audio input via I2S protocol
-- Configurable 54-tap FIR filter with fixed-point coefficients
+- Configurable 64-tap FIR filter with fixed-point coefficients
 - Pipelined architecture for high throughput
 - Written in Verilog HDL with comprehensive testbenches
 
