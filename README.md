@@ -10,7 +10,7 @@ Reference Manual used:
   All pins and clock divider values where derived from both of these reference manuals.
 
 ## Function of This Program:
-The purpose of this program is to take in external data through the I2S protocol. Later, that data is sent to an FIR filter. Finally, the filtered data is sent back out through the same I2S protocol.
+This project implements the I2S protocol to receive audio input, processes it through various FIR filters derived from MATLAB, and then outputs the filtered audio via the same I2S protocol. Timing closure was achieved by pipelining the FIR filter stages.
 
 ## Video of program functioning:
 Still have not recorded a functioning video.
