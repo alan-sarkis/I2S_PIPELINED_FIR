@@ -17,9 +17,6 @@ wire LEFT_RX_READY;
 wire LRCK, SCLK;
 wire SDOUT;
 
-
-// TX IS NOT TESTED AS IT DEPENDS ON THE FIR FILTER
-
 I2S2_TRANSCIEVER dut(
     .MCLK(MCLK),
     .SCLK(SCLK),
@@ -38,7 +35,7 @@ always #22.15 MCLK = ~MCLK; // Making 22.579 MHz Clock
 
 always begin
     repeat(10) @(posedge MCLK);
-    SDIN = $urandom();
+    SDIN = $urandom(); // Give a random value for SDIN
 end
 
 always@(posedge MCLK)begin // Assigning TX to RX to bypass FIR for Testing
