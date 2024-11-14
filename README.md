@@ -37,14 +37,17 @@ The filter coefficients where derived from the Matlab Filter Designer tool. Matl
 ### Bandstop Filter:
 ![Screenshot from 2024-11-09 20-12-33](https://github.com/user-attachments/assets/911df234-0bdd-4e7c-b636-cad770ebadcc)
 
-## Testbebch Results:
+## Testbench Results:
 
 ### I2S Transciever:
 ![Screenshot from 2024-11-13 15-19-55](https://github.com/user-attachments/assets/af0ce3a7-96dc-434e-8934-873af45f7a4f)
 
+These results show that the I2S transciever is behaving according to the I2S protocol standard.
+
 ### FIR Filter:
 ![Screenshot from 2024-11-13 13-11-56](https://github.com/user-attachments/assets/e6280a9c-220b-4d35-a68b-6db42d244812)
 
+These results show that the the output of the FIR filter changes according to the choice of filter. For example, when using the lowpass filter, you can see how we get mostly the 500Hz sound signal. The 5000Hz is mostly removed from the output.
 
 
 
