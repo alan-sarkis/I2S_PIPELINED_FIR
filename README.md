@@ -12,10 +12,16 @@ Reference Manual used:
 ## Function of This Program:
 This project implements the I2S protocol to receive audio input, processes it through various FIR filters derived from MATLAB, and then outputs the filtered audio via the same I2S protocol. Timing closure was achieved by pipelining the FIR filter stages.
 
+## Features
+- Supports stereo audio input via I2S protocol
+- Configurable 54-tap FIR filter with fixed-point coefficients
+- Pipelined architecture for high throughput
+- Written in Verilog HDL with comprehensive testbenches
+
 ## Video of program functioning:
 Still have not recorded a functioning video.
 
-### This is done accordingly:
+## Block Diagram:
 ![image](https://github.com/user-attachments/assets/67ba868f-7f1e-4362-a067-ea02bd34c124)
 
 The process begins with building the I2S protocol for the PMOD I2S2 to recieve and transmit data as shown initially in the flowchart. Once the data is being recieved into the FPGA, we direct it to the FIR filter. This filter is also binded to a switch which allows you to specifically select which type of filter is being operated. Finally, the data is exported back to the PMOD I2S2 to play it through the line out port.
