@@ -1,6 +1,6 @@
 # Implementation
 My implementation utilized this hardware:
-- [Zybo Z7-20 SoC] (https://digilent.com/reference/programmable-logic/zybo-z7/reference-manual?srsltid=AfmBOoosa5BYksdz-xCpqnrcECkMac7LwD7-Cak83Ao3HVjddShhrwJj)
+- Zybo Z7-20 SoC
 - PMOD I2S2
 
 ## Function of This Program
