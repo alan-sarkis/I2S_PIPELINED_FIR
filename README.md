@@ -47,7 +47,7 @@ These results show that the I2S transciever is behaving according to the I2S pro
 ### FIR Filter:
 ![Screenshot from 2024-11-13 13-11-56](https://github.com/user-attachments/assets/e6280a9c-220b-4d35-a68b-6db42d244812)
 
-These results show that the the output of the FIR filter changes according to the choice of filter. For example, when using the lowpass filter, you can see how we get mostly the 500Hz sound signal. The 5000Hz is mostly removed from the output.
+These results show that the the output of the FIR filter changes according to the choice of filter. For example, when using the lowpass filter, you can see how we get mostly the 500Hz sound signal. The 5000Hz is mostly removed from the output. The order of the testbench is no filter, lowpass filter, highpass filter, bandpass filter, bandstop filter.
 
 
 
