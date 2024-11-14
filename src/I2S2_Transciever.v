@@ -1,3 +1,26 @@
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 4th Year Student
+// Engineer: Alan Sarkis
+// 
+// Design Name: I2S2 TRANSCIEVER
+// Module Name: I2S2_TRANSCIEVER
+// Project Name: I2S_PIPELINED_FIR
+// Target Devices: ZYBO Z7-20, PMOD I2S2
+//
+// Description: The purpose of this module is to communicate from the PMOD I2S2
+// peripheral with the Zybo Board. The transciever operates as a slave meaning
+// that the clock signals are fully supplied by the FPGA. All the values used
+// for the clock divider and clock wizard are referenced from the reference
+// manuals given in the readme of this project.
+//
+// Specs: 
+// - 41000 Hz Sampling Frequency
+// - 24 Bits of Data per Sample
+// - Righ-Justified
+// - PMOD I2S2 operating as Slave
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
 module I2S2_TRANSCIEVER(
     input MCLK, // 22.579MHz
     output SCLK, // 8 Periods of MCLK
