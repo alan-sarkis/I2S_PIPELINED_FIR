@@ -58,5 +58,12 @@ These results show that the I2S transciever is behaving according to the I2S pro
 
 These results show that the the output of the FIR filter changes according to the choice of filter. For example, when using the lowpass filter, you can see how we get mostly the 500Hz sound signal. The 5000Hz is mostly removed from the output. The order of the testbench is no filter, lowpass filter, highpass filter, bandpass filter, bandstop filter.
 
+## Timing:
+
+Prior to pipelining the accumulator, this design was not reaching timing closure. To achieve timing closure, I pipelined the accumulator and now have positive worst negative slack and no total negative slack meaning that this design has achieved timing closure!
+
+### Timing Report:
+![image](https://github.com/user-attachments/assets/f25f034e-e909-4ae5-905a-8d245839cdcc)
+
 
 
