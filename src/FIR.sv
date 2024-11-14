@@ -1,3 +1,20 @@
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 4th Year Student
+// Engineer: Alan Sarkis
+// 
+// Design Name: FIR Filter
+// Module Name: FIR
+// Project Name: I2S_PIPELINED_FIR
+// Target Devices: ZYBO Z7-20
+//
+// Description: The purpose of this module is to add an FIR filter for the input
+// of the I2S transciever. There is four different filters in this file which
+// allow for choosing a specific filter based on the switch positions. The
+// filters present in this project are lowpass, highpass, bandpass and
+// bandstop. In order to achieve timing closure, I have pipelined the accumulator
+// allowing me to remove the Total Negative Slack.
+// 
+//////////////////////////////////////////////////////////////////////////////////
 module FIR(
     input MCLK,
     input [3:0] SWITCH,
