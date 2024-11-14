@@ -1,3 +1,18 @@
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 4th Year Student
+// Engineer: Alan Sarkis
+// 
+// Design Name: top
+// Module Name: top
+// Project Name: I2S_PIPELINED_FIR
+// Target Devices: ZYBO Z7-20, PMOD I2S2
+//
+// Description: This module combines both submodules:
+// - I2S2_Transciever.v
+// - FIR.sv
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
 module top(
     input SYS_CLK,
     input SDIN,
