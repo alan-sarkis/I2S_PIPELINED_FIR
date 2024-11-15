@@ -12,7 +12,7 @@ Reference Manual used:
 ## Function of This Program:
 This project implements the I2S protocol to receive audio input, processes it through various FIR filters derived from MATLAB, and then outputs the filtered audio via the same I2S protocol. Timing closure was achieved by pipelining the FIR filter stages.
 
-## Features
+## Features:
 - Real-time filtering
 - Supports stereo audio input via I2S protocol
 - Configurable 64-tap FIR filter with fixed-point coefficients
