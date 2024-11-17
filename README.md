@@ -20,7 +20,8 @@ This project implements the I2S protocol to receive audio input, processes it th
 - Written in Verilog HDL with comprehensive testbenches
 
 ## Video of program functioning:
-Still have not recorded a functioning video.
+
+https://drive.google.com/file/d/1Dr9hwzCzFTFoC7Zuhi73tJVmiFOkmkzY/view?usp=sharing
 
 ## Block Diagram:
 ![image](https://github.com/user-attachments/assets/67ba868f-7f1e-4362-a067-ea02bd34c124)
