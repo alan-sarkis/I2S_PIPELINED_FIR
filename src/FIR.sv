@@ -36,45 +36,50 @@ localparam DATA_WIDTH = 24;
 
 ////// FILTER COEFFICIENTS //////////
 reg signed [TAPS_WIDTH-1:0] COEF [NUM_MODES-1:0][NUM_TAPS:0]  =  '{
-'{16'h005f, 16'h007d, 16'h00cc, 16'h0137, 16'h01c5, 16'h027c, 16'h0361, 16'h047b,
-  16'h05cf, 16'h0761, 16'h0936, 16'h0b50, 16'h0db1, 16'h1058, 16'h1344, 16'h1670,
-  16'h19d7, 16'h1d71, 16'h2135, 16'h2516, 16'h2908, 16'h2cfc, 16'h30e3, 16'h34ac,
-  16'h3848, 16'h3ba5, 16'h3eb4, 16'h4167, 16'h43af, 16'h4582, 16'h46d7, 16'h47a6,
-  16'h47ec, 16'h47a6, 16'h46d7, 16'h4582, 16'h43af, 16'h4167, 16'h3eb4, 16'h3ba5,
-  16'h3848, 16'h34ac, 16'h30e3, 16'h2cfc, 16'h2908, 16'h2516, 16'h2135, 16'h1d71,
-  16'h19d7, 16'h1670, 16'h1344, 16'h1058, 16'h0db1, 16'h0b50, 16'h0936, 16'h0761,
-  16'h05cf, 16'h047b, 16'h0361, 16'h027c, 16'h01c5, 16'h0137, 16'h00cc, 16'h007d,
-  16'h005f},
 
-'{16'hfec6, 16'hffdc, 16'hffe4, 16'hfff5, 16'h000d, 16'h002c, 16'h0052, 16'h007a,
-  16'h00a5, 16'h00cd, 16'h00f1, 16'h010c, 16'h011b, 16'h0119, 16'h0104, 16'h00d9,
-  16'h0095, 16'h0038, 16'hffc0, 16'hff30, 16'hfe8a, 16'hfdd0, 16'hfd08, 16'hfc36,
-  16'hfb61, 16'hfa8f, 16'hf9c7, 16'hf911, 16'hf872, 16'hf7ef, 16'hf78e, 16'hf753,
-  16'h773f, 16'hf753, 16'hf78e, 16'hf7ef, 16'hf872, 16'hf911, 16'hf9c7, 16'hfa8f,
-  16'hfb61, 16'hfc36, 16'hfd08, 16'hfdd0, 16'hfe8a, 16'hff30, 16'hffc0, 16'h0038,
-  16'h0095, 16'h00d9, 16'h0104, 16'h0119, 16'h011b, 16'h010c, 16'h00f1, 16'h00cd,
-  16'h00a5, 16'h007a, 16'h0052, 16'h002c, 16'h000d, 16'hfff5, 16'hffe4, 16'hffdc,
-  16'hfec6},
-  
-'{16'hffed, 16'hffc8, 16'hff7c, 16'hfefd, 16'hfe53, 16'hfda6, 16'hfd45, 16'hfd94,
-  16'hfee7, 16'h0148, 16'h044d, 16'h0720, 16'h08b9, 16'h0850, 16'h05d5, 16'h022a,
-  16'hfee7, 16'hfdb2, 16'hff55, 16'h030b, 16'h0670, 16'h0656, 16'h0037, 16'hf3c4,
-  16'he3c1, 16'hd598, 16'hcfa2, 16'hd698, 16'heb52, 16'h09c7, 16'h29ee, 16'h4253,
-  16'h4b69, 16'h4253, 16'h29ee, 16'h09c7, 16'heb52, 16'hd698, 16'hcfa2, 16'hd598,
-  16'he3c1, 16'hf3c4, 16'h0037, 16'h0656, 16'h0670, 16'h030b, 16'hff55, 16'hfdb2,
-  16'hfee7, 16'h022a, 16'h05d5, 16'h0850, 16'h08b9, 16'h0720, 16'h044d, 16'h0148,
-  16'hfee7, 16'hfd94, 16'hfd45, 16'hfda6, 16'hfe53, 16'hfefd, 16'hff7c, 16'hffc8,
-  16'hffed},
+// 4000Hz Lowpass Filter
+'{16'hffa5, 16'hff66, 16'hff01, 16'hfe91, 16'hfe2e, 16'hfdf4, 16'hfe06, 16'hfe7f,
+  16'hff71, 16'h00d8, 16'h0297, 16'h0478, 16'h062e, 16'h075d, 16'h07ae, 16'h06e1,
+  16'h04d8, 16'h01b1, 16'hfdc1, 16'hf99b, 16'hf5fb, 16'hf3b3, 16'hf387, 16'hf610,
+  16'hfb99, 16'h040c, 16'h0ee9, 16'h1b4e, 16'h280e, 16'h33d7, 16'h3d60, 16'h4394,
+  16'h45ba, 16'h4394, 16'h3d60, 16'h33d7, 16'h280e, 16'h1b4e, 16'h0ee9, 16'h040c,
+  16'hfb99, 16'hf610, 16'hf387, 16'hf3b3, 16'hf5fb, 16'hf99b, 16'hfdc1, 16'h01b1,
+  16'h04d8, 16'h06e1, 16'h07ae, 16'h075d, 16'h062e, 16'h0478, 16'h0297, 16'h00d8,
+  16'hff71, 16'hfe7f, 16'hfe06, 16'hfdf4, 16'hfe2e, 16'hfe91, 16'hff01, 16'hff66,
+  16'hffa5},
 
-'{16'hff3b, 16'h017d, 16'hff6a, 16'hff87, 16'h0045, 16'h0095, 16'h004c, 16'hffd9,
-  16'hffc1, 16'h0034, 16'h00f0, 16'h017c, 16'h0178, 16'h00e8, 16'h003f, 16'h001b,
-  16'h00e3, 16'h026b, 16'h03f0, 16'h0483, 16'h03a5, 16'h01c0, 16'h001f, 16'h003d,
-  16'h02cb, 16'h06fa, 16'h0a88, 16'h0ab9, 16'h05d0, 16'hfc3b, 16'hf0be, 16'he76a,
-  16'h63d5, 16'he76a, 16'hf0be, 16'hfc3b, 16'h05d0, 16'h0ab9, 16'h0a88, 16'h06fa,
-  16'h02cb, 16'h003d, 16'h001f, 16'h01c0, 16'h03a5, 16'h0483, 16'h03f0, 16'h026b,
-  16'h00e3, 16'h001b, 16'h003f, 16'h00e8, 16'h0178, 16'h017c, 16'h00f0, 16'h0034,
-  16'hffc1, 16'hffd9, 16'h004c, 16'h0095, 16'h0045, 16'hff87, 16'hff6a, 16'h017d,
-  16'hff3b}};
+// 4000Hz Highpass Filter
+'{16'h0045, 16'hfea0, 16'h016b, 16'h0096, 16'hffab, 16'hff46, 16'hff61, 16'hffd6,
+  16'h006c, 16'h00d5, 16'h00cd, 16'h0044, 16'hff72, 16'hfeca, 16'hfebf, 16'hff7e,
+  16'h00bd, 16'h01d2, 16'h0204, 16'h00fd, 16'hff12, 16'hfd3b, 16'hfca1, 16'hfe00,
+  16'h0117, 16'h048b, 16'h0657, 16'h04a9, 16'hfecc, 16'hf5b3, 16'hebc9, 16'he41f,
+  16'h613e, 16'he41f, 16'hebc9, 16'hf5b3, 16'hfecc, 16'h04a9, 16'h0657, 16'h048b,
+  16'h0117, 16'hfe00, 16'hfca1, 16'hfd3b, 16'hff12, 16'h00fd, 16'h0204, 16'h01d2,
+  16'h00bd, 16'hff7e, 16'hfebf, 16'hfeca, 16'hff72, 16'h0044, 16'h00cd, 16'h00d5,
+  16'h006c, 16'hffd6, 16'hff61, 16'hff46, 16'hffab, 16'h0096, 16'h016b, 16'hfea0,
+  16'h0045},
+
+// 2000Hz - 6000Hz Bandpass Filter
+'{16'h003c, 16'h001c, 16'hffbe, 16'hfefc, 16'hfe0b, 16'hfd72, 16'hfdea, 16'h0005,
+  16'h03ba, 16'h080b, 16'h0b14, 16'h0a9f, 16'h0526, 16'hfae7, 16'hee7b, 16'he471,
+  16'he1e3, 16'hea49, 16'hfd78, 16'h16bc, 16'h2dbc, 16'h392a, 16'h3267, 16'h18b0,
+  16'hf266, 16'hcb96, 16'hb205, 16'hb01b, 16'hc892, 16'hf4d6, 16'h26da, 16'h4de6,
+  16'h5c9c, 16'h4de6, 16'h26da, 16'hf4d6, 16'hc892, 16'hb01b, 16'hb205, 16'hcb96,
+  16'hf266, 16'h18b0, 16'h3267, 16'h392a, 16'h2dbc, 16'h16bc, 16'hfd78, 16'hea49,
+  16'he1e3, 16'he471, 16'hee7b, 16'hfae7, 16'h0526, 16'h0a9f, 16'h0b14, 16'h080b,
+  16'h03ba, 16'h0005, 16'hfdea, 16'hfd72, 16'hfe0b, 16'hfefc, 16'hffbe, 16'h001c,
+  16'h003c},
+
+// 3000Hz - 5000Hz Bandstop Filter
+'{16'h0037, 16'hff37, 16'h0149, 16'hff4c, 16'hff01, 16'hffd7, 16'h0064, 16'h002a,
+  16'hff63, 16'hfe98, 16'hfe4d, 16'hfeba, 16'hff8e, 16'h0015, 16'hffbc, 16'hfe9e,
+  16'hfd98, 16'hfdc0, 16'hff79, 16'h01f7, 16'h03a7, 16'h0359, 16'h015f, 16'hffad,
+  16'h0099, 16'h0503, 16'h0b18, 16'h0ee7, 16'h0c9c, 16'h0324, 16'hf573, 16'he95d,
+  16'h648e, 16'he95d, 16'hf573, 16'h0324, 16'h0c9c, 16'h0ee7, 16'h0b18, 16'h0503,
+  16'h0099, 16'hffad, 16'h015f, 16'h0359, 16'h03a7, 16'h01f7, 16'hff79, 16'hfdc0,
+  16'hfd98, 16'hfe9e, 16'hffbc, 16'h0015, 16'hff8e, 16'hfeba, 16'hfe4d, 16'hfe98,
+  16'hff63, 16'h002a, 16'h0064, 16'hffd7, 16'hff01, 16'hff4c, 16'h0149, 16'hff37,
+  16'h0037}};
 
 
 ////// CHOOSE FILTER COEFFICIENTS ///////
@@ -82,10 +87,10 @@ reg signed [TAPS_WIDTH-1:0] TAPS [NUM_TAPS:0];
 
 always@(posedge MCLK)begin
     case(SWITCH)
-        4'b0001: TAPS <= COEF[0]; // 250Hz Low-Pass
-        4'b0010: TAPS <= COEF[1]; // 250Hz High-Pass
-        4'b0100: TAPS <= COEF[2]; // 500Hz - 6000Hz Band-Pass
-        4'b1000: TAPS <= COEF[3]; // 2000Hz - 4000Hz Band-Stop
+        4'b0001: TAPS <= COEF[3]; // 4000Hz Lowpass Filter
+        4'b0010: TAPS <= COEF[2]; // 4000Hz Highpass Filter
+        4'b0100: TAPS <= COEF[1]; // 2000Hz - 6000Hz Bandpass Filter
+        4'b1000: TAPS <= COEF[0]; // 3000Hz - 5000Hz Bandstop Filter
         default: TAPS <= TAPS;
     endcase
 end
