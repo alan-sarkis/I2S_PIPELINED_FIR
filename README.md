@@ -7,7 +7,7 @@ Reference Manual used:
 - https://digilent.com/reference/programmable-logic/zybo-z7/reference-manual
 - https://digilent.com/reference/pmod/pmodi2s2/reference-manual?srsltid=AfmBOop3qHp_o34WQPYizRe61k66GpRjQFFhaasx7XZ-JRVvNEcuCVIA
 
-  All pins and clock divider values where derived from both of these reference manuals.
+All pins and clock divider values where derived from both of these reference manuals.
 
 ## Function of This Program:
 This project implements the I2S protocol to receive audio input, processes it through various FIR filters derived from MATLAB, and then outputs the filtered audio via the same I2S protocol. Timing closure was achieved by pipelining the FIR filter stages.
