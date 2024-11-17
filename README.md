@@ -42,16 +42,16 @@ The DDS compiler was used to generate a input sinusoid with a low frequency of 5
 The filter coefficients where derived from the Matlab Filter Designer tool. Matlab allows for easy export of coefficient files for xilinx.
 
 ### Lowpass Filter:
-![Screenshot from 2024-11-09 19-37-39](https://github.com/user-attachments/assets/e868e3e1-9413-4a04-a08d-4c8e129e21b5)
+![Screenshot from 2024-11-16 20-14-17](https://github.com/user-attachments/assets/7306502a-d162-4be3-bb0b-8b82c1d0e3f1)
 
 ### Highpass Filter:
-![Screenshot from 2024-11-09 19-58-54](https://github.com/user-attachments/assets/8ac22519-7b83-472b-8ee5-c20f932a6914)
+![Screenshot from 2024-11-16 20-17-28](https://github.com/user-attachments/assets/5ad63aa5-4498-4990-ae7d-4cdb2a87a5aa)
 
 ### Bandpass Filter:
-![Screenshot from 2024-11-09 20-06-18](https://github.com/user-attachments/assets/4a5bdaa6-bd50-49ca-a07a-e6884792e5cb)
+![Screenshot from 2024-11-16 20-22-52](https://github.com/user-attachments/assets/7c745f28-3a5a-4c41-b3ba-b2ad974053a3)
 
 ### Bandstop Filter:
-![Screenshot from 2024-11-09 20-12-33](https://github.com/user-attachments/assets/911df234-0bdd-4e7c-b636-cad770ebadcc)
+![Screenshot from 2024-11-16 20-28-02](https://github.com/user-attachments/assets/e7856231-320b-4720-86d2-e31e050c2167)
 
 ## Testbench Results:
 
@@ -61,7 +61,8 @@ The filter coefficients where derived from the Matlab Filter Designer tool. Matl
 These results show that the I2S transciever is behaving according to the I2S protocol standard.
 
 ### FIR Filter:
-![Screenshot from 2024-11-13 13-11-56](https://github.com/user-attachments/assets/e6280a9c-220b-4d35-a68b-6db42d244812)
+![image](https://github.com/user-attachments/assets/7a622577-a18f-4c09-b040-f1b9a3aac429)
+
 
 These results show that the the output of the FIR filter changes according to the choice of filter. For example, when using the lowpass filter, you can see how we get mostly the 500Hz sound signal. The 5000Hz is mostly removed from the output. The order of the testbench is no filter, lowpass filter, highpass filter, bandpass filter, bandstop filter.
 
